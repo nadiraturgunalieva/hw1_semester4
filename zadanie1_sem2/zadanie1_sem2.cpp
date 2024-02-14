@@ -45,7 +45,7 @@ public:
 };
 
 void showSelection() {
-    std::cout << "Доступные продукты: " << std::endl;
+    std::cout << "Меню: " << std::endl;
     std::cout << "1. Конфеты" << std::endl;
     std::cout << "2. Чипсы" << std::endl;
     std::cout << "3. Жвачка" << std::endl;
@@ -53,6 +53,26 @@ void showSelection() {
     std::cout << "Выберите номер продукта: ";
 }
 
+void sellProduct(dispenserType& dispenser, cashRegister& cashReg) {
+    int amount;
+    switch (dispenser.getNoOfItems()) {
+        case 0:
+            std::cout << "К сожалению, продукт закончился. \n";
+            std::cout << "Выберите другой продукт. \n";
+            return;
+    }
+    int cost = dispenser.getCost();
+    std::cout << "Стоимость товара: " << cost << " руб. \n";
+    std::cout << "Введите сумму: ";
+    std::cin >> amount;
+    while (amount < dispenser.getCost()) {
+        std::cout << "Недостаточно средств. Попробуйте ещё раз: ";
+        std::cin >> amount;
+    }
+    dispenser.makeSale();
+
+    
+}
 int main()
 {
     setlocale(LC_ALL, "Rus");
