@@ -44,7 +44,7 @@ public:
 };
 
 void showSelection() {
-    std::cout << "Products :" << std::endl;
+    std::cout << "Доступные продукты :" << std::endl;
     std::cout << "1. Candies" << std::endl;
     std::cout << "2. Chips" << std::endl;
     std::cout << "3. Gum" << std::endl;
