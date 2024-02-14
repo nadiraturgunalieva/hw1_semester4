@@ -7,8 +7,8 @@ public:
     cashRegister() {
         cashOnHand = 500;
     }
-    cashRegister(int amount) {
-        cashOnHand = amount;
+    cashRegister(int cash) {
+        cashOnHand = cash;
     }
     int getCurrentBalance() {
         return cashOnHand;
@@ -23,6 +23,7 @@ class dispenserType {
 private:
     int numberOfItems;
     int cost;
+
 public:
     dispenserType() {
         numberOfItems = 50;
@@ -44,11 +45,12 @@ public:
 };
 
 void showSelection() {
-    std::cout << "Доступные продукты :" << std::endl;
-    std::cout << "1. Candies" << std::endl;
-    std::cout << "2. Chips" << std::endl;
-    std::cout << "3. Gum" << std::endl;
-    std::cout << "4. Cookies" << std::endl;
+    std::cout << "Доступные продукты: " << std::endl;
+    std::cout << "1. Конфеты" << std::endl;
+    std::cout << "2. Чипсы" << std::endl;
+    std::cout << "3. Жвачка" << std::endl;
+    std::cout << "4. Печеньки" << std::endl;
+    std::cout << "Выберите номер продукта: ";
 }
 
 int main()
